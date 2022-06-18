@@ -10,3 +10,7 @@ Members:
 - Juan Pablo Gutierrez 
 - Alejandro Romero
 - David Felipe Mora
+
+To replicate the environment using Anaconda on linux64 run:
+
+`$ conda create --name <env_name> --file requirements.txt`
