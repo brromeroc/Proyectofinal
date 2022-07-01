@@ -15,7 +15,7 @@ To replicate the environment using Anaconda on linux64 run:
 
 `$ conda create --name traffic-incident-optimization --file requirements.txt`
 
-In order to be able to consume the OSRM API, do the following:
+In order to be able to consume the OSRM API do the following:
 
 ```bash
 wget http://download.geofabrik.de/south-america/colombia-latest.osm.pbf
