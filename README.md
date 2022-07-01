@@ -14,3 +14,10 @@ Members:
 To replicate the environment using Anaconda on linux64 run:
 
 `$ conda create --name <env_name> --file requirements.txt`
+
+
+wget http://download.geofabrik.de/south-america/colombia-latest.osm.pbf
+docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-extract -p /opt/car.lua /data/colombia-latest.osm.pbf
+docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-partition /data/colombia-latest.osrm
+docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-customize /data/colombia-latest.osrm
+docker run -t -i -p 5000:5000 -v "${PWD}:/data" osrm/osrm-backend osrm-routed --algorithm mld /data/colombia-latest.osrm --max-table-size 10000
